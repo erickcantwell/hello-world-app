@@ -14,7 +14,7 @@
   ],
   "provisioners": [
     { "type": "shell",
-      "inline": ["apt-get install -y puppet"]
+      "inline": ["yum install -y puppet"]
     },
     {
       "type": "puppet-masterless",
