@@ -10,13 +10,11 @@
       "type": "docker",
       "image": "centos:latest",
       "commit": "true",
-      "communicator": "ssh",
-      "ssh_pty" : true 
     }
   ],
   "provisioners": [
     { "type": "shell",
-      "inline": ["yum install -y epel-release sudo && yum install -y puppet"]
+      "inline": ["yum install -y epel-release sudo && yum install -y puppet && sed -i.bak -e '/Defaults.*requiretty/s/^/#/' /etc/sudoers"]
     },
     {
       "type": "puppet-masterless",
