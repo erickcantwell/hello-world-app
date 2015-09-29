@@ -13,6 +13,9 @@
     }
   ],
   "provisioners": [
+    { "type": "shell",
+      "inline": ["apt-get install -y puppet"]
+    },
     {
       "type": "puppet-masterless",
       "manifest_file": "puppet/site.pp"
