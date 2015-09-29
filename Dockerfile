@@ -1,4 +1,4 @@
-FROM ubuntu:14.10
+FROM centos:latest
 
 MAINTAINER Erick Cantwell <ecantwell@mirantis.com>
 
