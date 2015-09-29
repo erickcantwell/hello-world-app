@@ -1,0 +1,31 @@
+{
+  "variables": {
+    "git_commit": "",
+    "git_branch": "",
+    "account_file": "",
+    "project_id": "null"
+  },
+  "builders": [
+    {
+      "type": "docker",
+      "image": "ubuntu:14.10",
+      "commit": "true" 
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "puppet-masterless",
+      "manifest_file": "puppet/site.pp"
+    }
+  ],
+  "post-processors": [
+        [
+            {
+                "type": "docker-tag",
+                "repository": "127.0.0.1:5000/{{user `project_id`}}/hello-world",
+                "tag": "{{user `git_branch`}}-{{user `git_commit`}}",
+                "only": ["docker"]
+            }
+        ]
+    ]
+}
