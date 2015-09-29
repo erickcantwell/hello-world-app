@@ -14,7 +14,7 @@
   ],
   "provisioners": [
     { "type": "shell",
-      "inline": ["yum install -y epel-release puppet"]
+      "inline": ["yum install -y epel-release && yum install -y puppet"]
     },
     {
       "type": "puppet-masterless",
