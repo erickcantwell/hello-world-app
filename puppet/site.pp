@@ -15,7 +15,8 @@ package { 'php':
   ensure => latest,
 }
 
-file { '/var/www/html/index.php':
-  ensure  => present,
+file { '/var/www/html/index.html':
+  ensure  => file,
+  content => inline_template("Kubernetes deployment worked!"),
   require => Package['httpd']
 }
