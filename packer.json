@@ -9,7 +9,9 @@
     {
       "type": "docker",
       "image": "centos:latest",
-      "commit": "true" 
+      "commit": "true",
+      "communicator": "ssh",
+      "ssh_pty" : true 
     }
   ],
   "provisioners": [
