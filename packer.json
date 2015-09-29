@@ -9,7 +9,7 @@
     {
       "type": "docker",
       "image": "centos:latest",
-      "commit": "true",
+      "commit": "true"
     }
   ],
   "provisioners": [
