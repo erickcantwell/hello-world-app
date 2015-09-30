@@ -25,7 +25,7 @@
         [
             {
                 "type": "docker-tag",
-                "repository": "127.0.0.1:5000/{{user `project_id`}}/hello-world",
+                "repository": "172.16.0.54:5000/{{user `project_id`}}/hello-world",
                 "tag": "{{user `git_branch`}}-{{user `git_commit`}}",
                 "only": ["docker"]
             }
